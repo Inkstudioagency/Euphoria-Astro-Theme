@@ -1,0 +1,58 @@
+---
+/** Case study hero (industry, title, image + logo) and article (summary cards, body, quote). */
+import type { CaseStudy } from '../../lib/cms';
+
+interface Props {
+  item: CaseStudy;
+}
+const { item } = Astro.props;
+
+const summary = [
+  { title: 'Client', icon: 'icon-cs-client', text: item.clientSummary },
+  { title: 'Features', icon: 'icon-cs-features', text: item.featuresSummary },
+  { title: 'Result', icon: 'icon-cs-result', text: item.resultSummary },
+];
+---
+<section class="section_article-hero">
+  <div class="container-main section-gap-small bottom-gap-none">
+    <div class="section-header is-centered">
+      <div page-load-1="" class="section-eyebrow">
+        <div class="section-eyebrow-dot"></div>
+        <div>{item.industry}</div>
+      </div>
+      <h1 hero-title="" class="heading-style-1 article-hero-title is-wide">{item.name}</h1>
+    </div>
+  </div>
+  <div class="container-main section-gap-small bottom-gap-none">
+    <div page-load-2="" class="article-hero-media"><img src={item.mainImage} loading="eager" fetchpriority="high" alt="" class="article-hero-image is-overlay-46" /><img src={item.companyLogo} loading="eager" alt={`${item.company} logo`} class="article-hero-logo" /></div>
+  </div>
+</section>
+<section class="section_article">
+  <div class="container-main section-gap">
+    <div class="article-body is-wide">
+      <div class="case-summary-grid">
+        {summary.map((card, i) => (
+          <div card-hover="" {...{ [`reveal-anim-${i + 1}`]: '' }} class="benefit-card">
+            <div class="icon-box is-white"><img src={`/images/${card.icon}.svg`} loading="lazy" alt="" class="icon-box-icon is-large" /></div>
+            <div class="card-text is-benefit">
+              <h2 class="heading-style-6 is-large">{card.title}</h2>
+              <p class="text-color-secondary is-feature-row">{card.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div reveal-2s="" class="rich-text w-richtext" set:html={item.body}></div>
+      {item.articleImage && <img src={item.articleImage} loading="lazy" alt="" class="article-image is-full" />}
+      <div class="rich-text w-richtext" set:html={item.bodyContinued}></div>
+      <div reveal-anim-1="" class="quote-block is-card">
+        <p class="quote-block-text is-wide">{item.quote}</p>
+        <div class="quote-author"><img src={item.authorPhoto} loading="lazy" alt={item.authorName} class="person-avatar is-quote" />
+          <div class="text-align-center">
+            <div class="quote-author-name">{item.authorName}</div>
+            <div class="quote-author-role">{item.authorRole}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

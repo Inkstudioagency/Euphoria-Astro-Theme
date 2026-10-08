@@ -1,0 +1,22 @@
+---
+import { getFeaturedPosts } from '../../../lib/cms';
+import FeaturedPostList from '../../cms/FeaturedPostList.astro';
+
+const list1 = await getFeaturedPosts(3);
+---
+<section class="section_page-hero bottom-gap-none">
+  <div class="container-main">
+    <div class="section-header is-centered">
+      <div page-load-1="" class="section-eyebrow">
+        <div class="section-eyebrow-dot"></div>
+        <div>Blogs</div>
+      </div>
+      <h1 hero-title="" class="heading-style-display page-hero-title">Insights and Updates</h1>
+    </div>
+  </div>
+  <div class="container-main featured-wrapper">
+    <div page-load-2="" class="featured-grid">
+      <FeaturedPostList posts={list1} />
+    </div>
+  </div>
+</section>

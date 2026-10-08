@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostArticle from '../../components/detail/BlogPostArticle.astro';
+import Blog from '../../components/sections/blog-post/Blog.astro';
+import Faq from '../../components/sections/shared/Faq.astro';
+import CtaSimple from '../../components/sections/shared/CtaSimple.astro';
+import { getBlogPosts, type BlogPost } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props as { post: BlogPost };
+---
+<BaseLayout title={post.name} description={post.excerpt} image={post.mainImage || undefined} type="article">
+  <main class="main-wrapper">
+    <BlogPostArticle post={post} />
+    <Blog />
+    <Faq />
+    <CtaSimple />
+  </main>
+</BaseLayout>

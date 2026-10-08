@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Study",
+    "description": "Customer stories. Also power the testimonial sliders."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "company": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "longQuote": {
+      "type": "text"
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorRole": {
+      "type": "string"
+    },
+    "authorPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "companyLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stat1Value": {
+      "type": "string"
+    },
+    "stat1Label": {
+      "type": "string"
+    },
+    "stat2Value": {
+      "type": "string"
+    },
+    "stat2Label": {
+      "type": "string"
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cardPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "articleImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "clientSummary": {
+      "type": "string"
+    },
+    "featuresSummary": {
+      "type": "string"
+    },
+    "resultSummary": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "bodyContinued": {
+      "type": "richtext"
+    }
+  }
+}

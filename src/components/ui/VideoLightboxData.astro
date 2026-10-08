@@ -1,0 +1,20 @@
+---
+/**
+ * Lightbox data for a `.w-lightbox` link, read by src/scripts/interactions.js when the
+ * link is clicked. The video comes from `site.video` in src/config/site.ts.
+ */
+import { site } from '../../config/site';
+
+const { youtubeId, title } = site.video;
+const data = {
+  items: [
+    {
+      type: 'video',
+      width: 940,
+      height: 528,
+      html: `<iframe src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1" width="940" height="528" scrolling="no" title="${title}" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>`,
+    },
+  ],
+};
+---
+<script is:inline type="application/json" class="w-json" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />

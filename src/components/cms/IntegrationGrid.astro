@@ -1,0 +1,34 @@
+---
+/** Integration cards (Integrations page and the "more integrations" list on detail pages). */
+import type { Integration } from '../../lib/cms';
+import { integrationUrl } from '../../lib/cms';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  items: Integration[];
+  /**
+   * Integrations page: adds `data-category` for the filter pills and shows the filter
+   * category on the tag. Elsewhere the tag shows the integration's own category.
+   */
+  filterable?: boolean;
+}
+const { items, filterable = false } = Astro.props;
+---
+<div class="w-dyn-list">
+  <div role="list" class="integrations-grid w-dyn-items">
+    {items.map((item) => (
+      <div reveal-anim-2="" role="listitem" class="w-dyn-item">
+        <a data-category={filterable ? item.filterCategory : undefined} card-hover="" href={integrationUrl(item)} class="integration-card w-inline-block">
+          <div class="integration-card-top"><img src={item.logo} loading="lazy" alt={item.name} class="integration-card-logo" />
+            <div class="category-tag">{filterable ? item.filterCategory : item.category}</div>
+          </div>
+          <div class="card-text is-benefit">
+            <h3 class="heading-style-6 is-large">{item.name}</h3>
+            <p class="text-color-secondary is-feature-row is-clamp-2">{item.excerpt}</p>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+  {items.length === 0 && <DynEmpty />}
+</div>

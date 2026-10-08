@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/about-v1/PageHero.astro';
+import About from '../components/sections/about-v1/About.astro';
+import Milestone from '../components/sections/about-v1/Milestone.astro';
+import Team from '../components/sections/about-v1/Team.astro';
+import VideoTestimonial from '../components/sections/shared/VideoTestimonial.astro';
+import Testimonials from '../components/sections/about-v1/Testimonials.astro';
+import Marquee from '../components/sections/shared/Marquee.astro';
+import Faq from '../components/sections/shared/Faq.astro';
+import Blog from '../components/sections/about-v1/Blog.astro';
+import CtaSimple from '../components/sections/shared/CtaSimple.astro';
+---
+<BaseLayout
+  title="About | Euphoria"
+  description="Learn how Euphoria started, the milestones we reached and the people who build it. Our mission is to give every finance team clarity, speed and full control."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <About />
+    <Milestone />
+    <Team />
+    <VideoTestimonial />
+    <Testimonials />
+    <Marquee />
+    <Faq />
+    <Blog />
+    <CtaSimple />
+  </main>
+</BaseLayout>

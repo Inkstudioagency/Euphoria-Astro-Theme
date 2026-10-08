@@ -1,0 +1,26 @@
+{
+  "name": "euphoria-astro-theme",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.6",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.1",
+    "lottie-web": "^5.13.0"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "description": "Euphoria — a fintech SaaS theme for Astro with Strapi CMS",
+  "license": "MIT"
+}

@@ -1,0 +1,23 @@
+---
+import { getIntegrations } from '../../../lib/cms';
+import IntegrationGrid from '../../cms/IntegrationGrid.astro';
+
+const list1 = await getIntegrations();
+---
+<section class="section_integrations">
+  <div class="container-main section-gap">
+    <div class="section-header-row is-spaced">
+      <h2 section-title="" class="heading-style-2 section-title is-wide">Integrations Tools</h2>
+      <div reveal-anim-3="" class="filter-row">
+        <a role="button" href="#" data-filter="all" class="filter-pill is-integration is-active">All</a>
+        <a role="button" href="#" data-filter="CRM" class="filter-pill is-integration">CRM</a>
+        <a role="button" href="#" data-filter="Finance" class="filter-pill is-integration">Finance</a>
+        <a role="button" href="#" data-filter="Marketing" class="filter-pill is-integration">Marketing</a>
+        <a role="button" href="#" data-filter="Human resource" class="filter-pill is-integration">Human Resource</a>
+      </div>
+    </div>
+    <div>
+      <IntegrationGrid items={list1} filterable />
+    </div>
+  </div>
+</section>

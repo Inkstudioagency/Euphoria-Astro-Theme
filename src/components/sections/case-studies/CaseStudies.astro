@@ -1,0 +1,13 @@
+---
+import { getCaseStudies } from '../../../lib/cms';
+import CaseStudyGrid from '../../cms/CaseStudyGrid.astro';
+
+const list1 = await getCaseStudies();
+---
+<section class="section_case-studies">
+  <div class="container-main section-gap">
+    <div>
+      <CaseStudyGrid items={list1} />
+    </div>
+  </div>
+</section>

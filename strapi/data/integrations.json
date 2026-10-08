@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Notewell",
+    "slug": "notewell",
+    "order": 1,
+    "logo": "integration-icon-9.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Notewell connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Notewell Workspace</h2><p>If you don't have a Notewell account yet, sign up on the Notewell website. Once your workspace is ready, log in as a workspace owner or admin.</p><h2>Step 2: Create an Internal Integration Token</h2><p>In Notewell, open Settings, then Connections and Develop integrations. Create a new internal integration for Euphoria and copy the secret token it generates for your workspace.</p><h2>Step 3: Connect Notewell in Euphoria</h2><p>Open Settings in Euphoria, choose Integrations and select Notewell. Paste the token, then share the databases you want to sync with the Euphoria integration from inside Notewell.</p><h2>Step 4: Map Databases &amp; Properties</h2><p>Choose the Notewell databases Euphoria should use, such as budgets, vendors or project costs. Match each property, like amount, owner, status and date, to its field in Euphoria so reports and documents stay consistent across both tools.</p><h2>Step 5: Test the Integration</h2><p>Add a test row to a shared Notewell database and run a sync. Confirm the record appears in Euphoria with the right values, then update it in Notewell to check that edits sync too.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Pick a sync frequency, decide whether Euphoria should write totals back to Notewell and choose which team members can see synced pages. Unshare a database to stop syncing it.</p>",
+    "category": "Analytics",
+    "filterCategory": "Marketing",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Huddlepost",
+    "slug": "huddlepost",
+    "order": 2,
+    "logo": "integration-icon-8.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Huddlepost connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Huddlepost Workspace</h2><p>If your team doesn't use Huddlepost yet, create a workspace on the Huddlepost website. Once it's ready, log in with an account that can install apps.</p><h2>Step 2: Install the Euphoria App for Huddlepost</h2><p>Huddlepost uses OAuth to add apps safely. From Euphoria you'll be redirected to Huddlepost, where you choose the workspace and allow the app to post messages and read basic profiles.</p><h2>Step 3: Connect Huddlepost in Euphoria Settings</h2><p>In Euphoria, open Settings, choose Integrations and click Connect on Huddlepost. Approve the install, pick a default channel for finance updates and you will be sent back to Euphoria.</p><h2>Step 4: Map Users, Channels &amp; Notifications</h2><p>Match Huddlepost users to team members in Euphoria so approval requests reach the right person. Assign channels to alert types, such as bill approvals, expense reports and low cash balances, so every update lands where your team works.</p><h2>Step 5: Test the Integration</h2><p>Send a test notification from Euphoria and check that it arrives in the chosen channel. Try approving a sample expense directly from Huddlepost to confirm actions sync back correctly.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Set quiet hours, choose a daily or weekly cash summary and decide which approvals can be completed from Huddlepost. You can remove the app from your workspace whenever you like.</p>",
+    "category": "Analytics",
+    "filterCategory": "Marketing",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Dealforge",
+    "slug": "dealforge",
+    "order": 3,
+    "logo": "integration-icon-7.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Dealforge connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Dealforge Org</h2><p>If you don't have a Dealforge account yet, sign up on the Dealforge website. Once your org is set up, log in as a system administrator.</p><h2>Step 2: Approve the Dealforge Connected App</h2><p>Dealforge connects through a secure connected app. You'll be asked to sign in and approve access to accounts, opportunities and contacts, with no passwords stored in Euphoria.</p><h2>Step 3: Configure Dealforge in Euphoria</h2><p>Go to Settings in Euphoria, open Integrations and click Connect on Dealforge. Choose production or sandbox, sign in, approve access and Euphoria will start reading your records.</p><h2>Step 4: Map Accounts, Opportunities &amp; Products</h2><p>Link Dealforge accounts to customers in Euphoria and map closed opportunities to invoices. Match products and price books to your revenue accounts so every booking flows into billing and reporting without manual copying or spreadsheets.</p><h2>Step 5: Test the Integration</h2><p>Connect a sandbox first if you have one, close a test opportunity and run a sync. Check that the customer, amount and products appear correctly in Euphoria before going live.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Choose which opportunity stages create invoices, set a sync interval and decide whether invoice and payment status should be written back to the matching Dealforge record.</p>",
+    "category": "CRM",
+    "filterCategory": "CRM",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Leadhive",
+    "slug": "leadhive",
+    "order": 4,
+    "logo": "integration-icon-6.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Leadhive connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Leadhive Portal</h2><p>If you don't have a Leadhive account yet, sign up on the Leadhive website. Once your portal is ready, log in as a super admin user.</p><h2>Step 2: Create a Private App Access Token</h2><p>In Leadhive, open Settings, then Integrations and Private Apps. Create an app with read scopes for contacts, companies and deals, then copy the private access token it generates.</p><h2>Step 3: Connect Leadhive in Euphoria</h2><p>Open Settings in Euphoria, choose Integrations and select Leadhive. Paste the access token, confirm your portal ID and click Connect. Contacts and deals start syncing right away.</p><h2>Step 4: Map Deals, Companies &amp; Contacts</h2><p>Match Leadhive companies and contacts to customers in Euphoria, then map closed-won deals to invoices. Line items, amounts and close dates carry over, so your finance team can bill new customers without re-typing any sales information again.</p><h2>Step 5: Test the Integration</h2><p>Move a test deal to Closed Won in Leadhive and run a sync. Confirm a draft invoice appears in Euphoria with the right company, amount and line items before switching it on.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Choose which deal pipelines and stages trigger invoices, set a sync interval and decide whether payment status should be written back to Leadhive as a custom deal property for sales.</p>",
+    "category": "CRM",
+    "filterCategory": "CRM",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Payrolly",
+    "slug": "payrolly",
+    "order": 5,
+    "logo": "integration-icon-5.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Payrolly connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Payrolly Account</h2><p>If you don't use Payrolly yet, visit the Payrolly website and set up your company. Once payroll is configured, log in with an admin account.</p><h2>Step 2: Authorise Euphoria via Payrolly OAuth</h2><p>Payrolly connects through a secure OAuth flow. When you start the setup, you'll sign in to Payrolly and approve read-only access to payroll runs, employees and contractor payments.</p><h2>Step 3: Configure Payrolly in Euphoria</h2><p>In Euphoria, go to Settings, open Integrations and click Connect on the Payrolly card. Approve access, pick the company you want to sync and Euphoria will import past payroll runs.</p><h2>Step 4: Map Employees, Departments &amp; Payroll</h2><p>Match Payrolly employees, contractors and departments to the right records in Euphoria. Map wages, taxes, benefits and reimbursements to separate accounts so every payroll run is posted as a clean, detailed journal entry in your books.</p><h2>Step 5: Test the Integration</h2><p>Run a sync after your next payroll or use a past run as a test. Check that gross pay, employer taxes and net pay totals in Euphoria match the payroll summary inside Payrolly.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Choose whether to sync payroll as summary or per-employee entries, set the posting date rule and enable notifications whenever a new payroll run is imported into Euphoria for review.</p>",
+    "category": "Payroll",
+    "filterCategory": "Human resource",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Cardvault",
+    "slug": "cardvault",
+    "order": 6,
+    "logo": "integration-icon-4.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Cardvault connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Cardvault Account</h2><p>If your company doesn't use Cardvault yet, apply on the Cardvault website and complete onboarding. Once approved, log in to your Cardvault dashboard as an admin.</p><h2>Step 2: Generate a Cardvault API Token</h2><p>In Cardvault, open Developer settings and create a new user token. Give it read access to transactions, cards and receipts, then copy the token before you close the settings window.</p><h2>Step 3: Connect Cardvault in Euphoria</h2><p>Head to Settings in Euphoria, select Integrations and choose Cardvault. Paste the API token, confirm the connection and Euphoria will begin importing your recent card transactions.</p><h2>Step 4: Map Cards, Merchants &amp; Categories</h2><p>Link each Cardvault card and cardholder to the correct employee in Euphoria, then map merchant categories to your expense accounts. Receipts and memos travel with each transaction, so approvals and month-end close move much faster for the team.</p><h2>Step 5: Test the Integration</h2><p>Make a small purchase on a Cardvault card or use a recent transaction and run a manual sync. Confirm the cardholder, merchant, category and receipt all show up correctly in Euphoria.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Pick a sync frequency, choose which entities or cards to include and set spending alerts for your finance team. You can revoke the token in Cardvault at any time to stop syncing.</p>",
+    "category": "Banking",
+    "filterCategory": "Finance",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Paystream",
+    "slug": "paystream",
+    "order": 7,
+    "logo": "integration-icon-3.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Paystream connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Paystream Dashboard</h2><p>If you don't have a Paystream account yet, go to the Paystream website and sign up. Once your account is activated, log in to the Paystream Dashboard.</p><h2>Step 2: Create a Restricted API Key</h2><p>In Paystream, open Developers and then API keys. Create a restricted key with read access to charges, payouts, customers and invoices. Copy the key and store it somewhere safe.</p><h2>Step 3: Connect Paystream in Euphoria</h2><p>Open Settings in Euphoria, choose Integrations and select Paystream. Paste your restricted key, give the connection a clear name and click Connect to start importing payment history.</p><h2>Step 4: Map Payments, Payouts &amp; Fees</h2><p>Match Paystream charges, refunds, payouts and processing fees to the right accounts in Euphoria. Link Paystream customers to your existing contacts so every payment reconciles against the correct invoice and your revenue reports stay accurate.</p><h2>Step 5: Test Integration</h2><p>Make a small test payment in Paystream's test mode, or wait for a live charge, then run a sync. Check that the gross amount, fee and net payout all appear correctly in Euphoria.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Choose how often payouts are reconciled, set a default clearing account and enable alerts for disputes or failed payouts. Multi-currency accounts can be mapped one by one.</p>",
+    "category": "Payments",
+    "filterCategory": "Finance",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Bookwise",
+    "slug": "bookwise",
+    "order": 8,
+    "logo": "integration-icon-2.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Bookwise connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Bookwise Account</h2><p>If you don't have a Bookwise Online account yet, visit the Bookwise website and sign up. Once your company file is ready, log in with your details.</p><h2>Step 2: Approve the Bookwise OAuth Connection</h2><p>Bookwise links through Bookwise's secure sign-in. When you start the connection, Euphoria opens an Bookwise window where you approve access to your accounting data with one click.</p><h2>Step 3: Configure Bookwise in Euphoria</h2><p>Go to Settings in Euphoria, open Integrations and select Bookwise. Sign in with Bookwise, choose the company you want to connect and confirm. The first import begins automatically.</p><h2>Step 4: Map Customers, Vendors &amp; Accounts</h2><p>Pair your Bookwise customers, vendors, classes and income or expense accounts with the matching fields in Euphoria. Accurate mapping keeps invoices, bills and payments categorised correctly and saves hours of manual clean-up at month end.</p><h2>Step 5: Test the Integration</h2><p>Record a small test expense in Bookwise and sync it to Euphoria. Confirm the vendor, category and amount are correct, then delete the test entry once everything looks right.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Choose a sync schedule, decide whether Euphoria should push approved bills back to Bookwise and select who gets notified about errors. Settings can be changed whenever you need.</p>",
+    "category": "Accounting",
+    "filterCategory": "Finance",
+    "website": "https://example.com"
+  },
+  {
+    "name": "Ledgerline",
+    "slug": "ledgerline",
+    "order": 9,
+    "logo": "integration-icon-1.svg",
+    "mainImage": "feature-dashboard-1.webp",
+    "excerpt": "Ledgerline connects to Euphoria to sync transactions, contacts and documents automatically. Keep every record in one place and stop entering the same data twice.",
+    "body": "<h2>Step 1: Access Your Ledgerline Organisation</h2><p>If you don't have a Ledgerline account yet, head to the Ledgerline website and start a free trial. Once you're set up, log in and select your organisation.</p><h2>Step 2: Authorise Euphoria with Ledgerline OAuth</h2><p>Ledgerline uses a secure OAuth connection rather than a manual key. From Euphoria you'll be redirected to Ledgerline to approve access, so you only grant the permissions the sync needs.</p><h2>Step 3: Connect Ledgerline in Euphoria Settings</h2><p>In Euphoria, open Settings, choose Integrations and click Connect next to Ledgerline. Approve the request in Ledgerline, pick your organisation and you'll be sent straight back to Euphoria.</p><h2>Step 4: Map Accounts, Contacts &amp; Tax Rates</h2><p>Match your Ledgerline chart of accounts, tracking categories and tax rates to the matching fields in Euphoria. Link contacts and bank accounts too, so bills, invoices and payments land in the correct ledger every time they sync across.</p><h2>Step 5: Run a Test Sync</h2><p>Create a draft invoice in Ledgerline and trigger a manual sync from Euphoria. Check that the amount, contact and account code all match, then fix any mapping gaps before going live.</p><h2>Step 6: Additional Configuration (If Applicable)</h2><p>Set how often Euphoria pulls data from Ledgerline, choose which organisations to include and turn on alerts for failed syncs. You can pause or disconnect the integration at any time.</p>",
+    "category": "Accounting",
+    "filterCategory": "Finance",
+    "website": "https://example.com"
+  }
+]

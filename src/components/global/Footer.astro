@@ -1,0 +1,45 @@
+---
+import { site } from '../../config/site';
+import { footerNav } from '../../config/navigation';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => href === path;
+const current = (href: string) => (isCurrent(href) ? { 'aria-current': 'page' as const } : {});
+const lastSocial = site.social.length - 1;
+---
+<footer class="footer">
+  <div class="footer-top">
+    <div id="w-node-_6f808f20-9f1e-ee2f-a4d6-d20a46344862-46344860" class="footer-panel is-brand">
+      <a href="/" aria-label={`${site.name} home`} {...current('/')} class:list={['w-inline-block', isCurrent('/') && 'w--current']}><img src={site.logoWhite} loading="lazy" alt={`${site.name} logo`} class="footer-logo" /></a>
+    </div>
+    <div class="footer-panel">
+      <div class="footer-links">
+        {footerNav.map((column) => (
+          <div class="footer-column">
+            <div class="footer-column-title">{column.title}</div>
+            <div class="footer-link-list">
+              {column.links.map((link) => (
+                <a href={link.href} {...current(link.href)} class:list={['footer-link', isCurrent(link.href) && 'w--current']}>{link.label}</a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="footer-legal">
+        <div>{site.copyright}</div>
+        <div>Designed by <a href={site.credits.designer.href} class="footer-legal-link">{site.credits.designer.label}</a> · Powered by <a href={site.credits.poweredBy.href} class="footer-legal-link">{site.credits.poweredBy.label}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-socials">
+    {site.social.map((item, i) => (
+      <a
+        href={item.href}
+        aria-label={item.label}
+        id={i === lastSocial ? 'w-node-_6f808f20-9f1e-ee2f-a4d6-d20a463448ae-46344860' : undefined}
+        class="footer-social-link w-inline-block"
+      ><img src={item.icon} loading="lazy" alt={item.alt} class="footer-social-icon" /></a>
+    ))}
+  </div>
+</footer>

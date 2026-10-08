@@ -1,0 +1,35 @@
+---
+/** Blog page hero: expanding accordion of featured posts. */
+import type { BlogPost } from '../../lib/cms';
+import { blogUrl } from '../../lib/cms';
+import ArrowIcon from '../ui/ArrowIcon.astro';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  posts: BlogPost[];
+}
+const { posts } = Astro.props;
+---
+<div class="featured-list w-dyn-list">
+  <div role="list" class="featured-list w-dyn-items">
+    {posts.map((post) => (
+      <div card-hover="" role="listitem" class="featured-card w-dyn-item"><img src={post.mainImage} loading="lazy" alt={post.name} class="featured-card-image is-dimmed" />
+        <div class="featured-card-panel">
+          <div class="card-text is-featured">
+            <a href={blogUrl(post)} class="blog-card-title-block w-inline-block">
+              <h2 class="heading-style-6 blog-card-title is-featured">{post.name}</h2>
+            </a>
+            <p class="blog-card-excerpt is-featured">{post.excerpt}</p>
+          </div>
+          <a href={blogUrl(post)} class="primary-button w-inline-block">
+            <div class="button-text">Read Article</div>
+            <div class="button-icon-wrapper">
+              <ArrowIcon />
+            </div>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+  {posts.length === 0 && <DynEmpty />}
+</div>

@@ -1,0 +1,163 @@
+---
+/**
+ * Blog post card lists. Each variant reproduces one card design from the template:
+ * - stacked        Home V1 "Journal" (date + read time tags)
+ * - stacked-arrow  About V1 (stacked + round arrow)
+ * - horizontal     Home V2 / About V2 (image left, text right)
+ * - grid           Blog page and "related posts" (excerpt + arrow link)
+ * - overlay        About V3 (text over the image, read-time badge)
+ * - overlay-link   Home V3 (overlay card, whole card is one link)
+ */
+import type { BlogPost } from '../../lib/cms';
+import { blogUrl, formatDate } from '../../lib/cms';
+import ArrowIcon from '../ui/ArrowIcon.astro';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  posts: BlogPost[];
+  variant: 'stacked' | 'stacked-arrow' | 'horizontal' | 'grid' | 'overlay' | 'overlay-link';
+  /** grid only: adds the `card-hover` interaction (Blog page). */
+  cardHover?: boolean;
+  /** grid only: aria-label for the arrow link (related posts). */
+  arrowLabel?: string;
+}
+const { posts, variant, cardHover = false, arrowLabel } = Astro.props;
+
+const listClass = {
+  stacked: 'blog-list',
+  'stacked-arrow': 'blog-list',
+  horizontal: 'blog-list is-horizontal',
+  grid: 'blog-list is-3-col',
+  overlay: 'blog-list',
+  'overlay-link': 'blog-list',
+}[variant];
+---
+<div class="w-dyn-list">
+  <div role="list" class={`${listClass} w-dyn-items`}>
+    {posts.map((post) => {
+      const url = blogUrl(post);
+      return (
+        <div reveal-anim-2="" role="listitem" class="blog-item w-dyn-item">
+          {(variant === 'stacked' || variant === 'stacked-arrow') && (
+            <div class="blog-card is-stacked">
+              <a href={url} class="blog-card-image-wrapper is-stacked w-inline-block"><img src={post.mainImage} loading="lazy" alt={post.name} class="blog-card-image" /></a>
+              <div class="blog-card-body is-stacked">
+                <div class="blog-meta-row">
+                  <div class="section-eyebrow is-tag">
+                    <div class="section-eyebrow-dot"></div>
+                    <div>{formatDate(post.publishedDate)}</div>
+                  </div>
+                  <div class="section-eyebrow is-tag">
+                    <div class="section-eyebrow-dot"></div>
+                    <div>{post.readTime}</div>
+                  </div>
+                </div>
+                <a href={url} class="blog-card-title-block is-stacked w-inline-block">
+                  <h3 class="heading-style-6 blog-card-title">{post.name}</h3>
+                </a>
+                {variant === 'stacked-arrow' && (
+                  <a href={url} class="blog-card-arrow w-inline-block">
+                    <ArrowIcon class="is-inverse" />
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
+          {variant === 'horizontal' && (
+            <div class="blog-card is-stacked is-horizontal">
+              <a href={url} class="blog-card-image-wrapper is-stacked is-horizontal w-inline-block"><img src={post.mainImage} loading="lazy" alt={post.name} class="blog-card-image" /></a>
+              <div class="blog-card-body is-stacked is-horizontal">
+                <div class="blog-meta-row">
+                  <div class="section-eyebrow is-tag">
+                    <div class="section-eyebrow-dot"></div>
+                    <div>{formatDate(post.publishedDate)}</div>
+                  </div>
+                  <div class="section-eyebrow is-tag">
+                    <div class="section-eyebrow-dot"></div>
+                    <div>{post.readTime}</div>
+                  </div>
+                </div>
+                <a href={url} class="blog-card-title-block is-stacked w-inline-block">
+                  <h3 class="heading-style-6 blog-card-title is-clamp">{post.name}</h3>
+                </a>
+                <a href={url} class="blog-card-arrow top-space w-inline-block">
+                  <ArrowIcon class="is-inverse" />
+                </a>
+              </div>
+            </div>
+          )}
+
+          {variant === 'grid' && (
+            <div card-hover={cardHover ? '' : undefined} class="blog-card is-stacked">
+              <a href={url} class="blog-card-image-wrapper is-stacked w-inline-block"><img src={post.mainImage} loading="lazy" alt={post.name} class="blog-card-image" /></a>
+              <div class="blog-card-body is-stacked">
+                <div class="blog-meta-row">
+                  <div class="section-eyebrow is-meta">
+                    <div class="section-eyebrow-dot"></div>
+                    <div>{formatDate(post.publishedDate)}</div>
+                  </div>
+                  <div class="section-eyebrow is-meta">
+                    <div class="section-eyebrow-dot"></div>
+                    <div>{post.readTime}</div>
+                  </div>
+                </div>
+                <a href={url} class="blog-card-title-block is-stacked w-inline-block">
+                  <h3 class="heading-style-6 blog-card-title">{post.name}</h3>
+                </a>
+                <p class="blog-card-excerpt">{post.excerpt}</p>
+                <a aria-label={arrowLabel} href={url} class="blog-card-arrow w-inline-block">
+                  <div class="blog-card-arrow-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M13 18C13 18 19 13.5811 19 12C19 10.4188 13 6 13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></div>
+                </a>
+              </div>
+            </div>
+          )}
+
+          {variant === 'overlay' && (
+            <div class="blog-card">
+              <a href={url} class="blog-card-image-wrapper w-inline-block"><img src={post.mainImage} loading="lazy" alt={post.name} class="blog-card-image" />
+                <div class="blog-card-overlay"></div>
+              </a>
+              <div class="blog-card-badge">
+                <div class="section-eyebrow is-tag">
+                  <div class="section-eyebrow-dot"></div>
+                  <div>{post.readTime}</div>
+                </div>
+              </div>
+              <div class="blog-card-body">
+                <a href="/blog" class="blog-card-title-block w-inline-block">
+                  <h3 class="heading-style-6 blog-card-title is-inherit">{post.name}</h3>
+                </a>
+                <p class="blog-card-excerpt is-overlay">{post.excerpt}</p>
+              </div>
+            </div>
+          )}
+
+          {variant === 'overlay-link' && (
+            <a href={url} class="blog-card w-inline-block">
+              <div href="#" class="blog-card-image-wrapper"><img src={post.mainImage} loading="lazy" alt={post.name} class="blog-card-image" />
+                <div class="blog-card-overlay"></div>
+              </div>
+              <div class="blog-card-badge">
+                <div class="section-eyebrow is-tag">
+                  <div class="section-eyebrow-dot"></div>
+                  <div>{post.readTime}</div>
+                </div>
+              </div>
+              <div class="blog-card-body">
+                <div href="#" class="blog-card-title-block">
+                  <h3 class="heading-style-6 blog-card-title is-inherit">{post.name}</h3>
+                </div>
+                <p class="blog-card-excerpt is-overlay">{post.excerpt}</p>
+              </div>
+            </a>
+          )}
+        </div>
+      );
+    })}
+  </div>
+  {posts.length === 0 && <DynEmpty />}
+</div>

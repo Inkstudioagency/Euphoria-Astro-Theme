@@ -1,0 +1,34 @@
+---
+/** Integration hero ("Connect with …", logo pair) and setup guide body. */
+import type { Integration } from '../../lib/cms';
+import { site } from '../../config/site';
+
+interface Props {
+  item: Integration;
+}
+const { item } = Astro.props;
+---
+<section class="section_article-hero">
+  <div class="container-main section-gap-small bottom-gap-none">
+    <div class="section-header is-centered">
+      <div page-load-1="" class="section-eyebrow">
+        <div class="section-eyebrow-dot"></div>
+        <div>Integration</div>
+      </div>
+      <h1 hero-title="" class="heading-style-1 article-hero-title">Connect with <span>{item.name}</span></h1>
+      <p page-load-3="" class="section-summary is-medium is-618">{item.excerpt}</p>
+      <div page-load-4="" class="integration-pair">
+        <div class="integration-pair-tile"><img src="/images/icon-logomark.svg" loading="lazy" alt={site.name} class="integration-pair-logo" /></div>
+        <div class="integration-pair-plus">+</div>
+        <div class="integration-pair-tile"><img src={item.logo} loading="lazy" alt={item.name} class="integration-pair-logo" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section_article">
+  <div class="container-main section-gap">
+    <div class="article-body is-medium is-left">
+      <div reveal-2s="" class="rich-text w-richtext" set:html={item.body}></div>
+    </div>
+  </div>
+</section>

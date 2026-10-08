@@ -1,0 +1,16 @@
+---
+import { getIntegrations } from '../../../lib/cms';
+import IntegrationGrid from '../../cms/IntegrationGrid.astro';
+
+const list1 = (await getIntegrations()).slice(0, 3);
+---
+<section class="section_integrations">
+  <div class="container-main section-gap">
+    <div class="section-header-row is-spaced">
+      <h2 section-title="" class="heading-style-2 section-title">Other Integrations</h2>
+    </div>
+    <div>
+      <IntegrationGrid items={list1} />
+    </div>
+  </div>
+</section>

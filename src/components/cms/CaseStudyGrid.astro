@@ -1,0 +1,45 @@
+---
+/** Case Studies page grid. */
+import type { CaseStudy } from '../../lib/cms';
+import { caseStudyUrl } from '../../lib/cms';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  items: CaseStudy[];
+}
+const { items } = Astro.props;
+---
+<div class="w-dyn-list">
+  <div role="list" class="case-study-grid w-dyn-items">
+    {items.map((item) => (
+      <div reveal-anim-2="" role="listitem" class="w-dyn-item">
+        <div card-hover="" class="case-study-card">
+          <a href={caseStudyUrl(item)} class="case-study-card-image-wrapper w-inline-block"><img src={item.mainImage} loading="lazy" alt={item.name} class="case-study-card-image" /></a>
+          <div class="case-study-card-body">
+            <div class="blog-meta-row">
+              <div class="section-eyebrow">
+                <div class="section-eyebrow-dot"></div>
+                <div>{item.industry}</div>
+              </div>
+            </div>
+            <a href={caseStudyUrl(item)} class="blog-card-title-block w-inline-block">
+              <h2 class="heading-style-5 case-study-title">{item.name}</h2>
+            </a>
+            <p class="text-color-secondary">{item.excerpt}</p>
+            <div class="case-study-card-stats">
+              <div class="testimonial-stat">
+                <div class="testimonial-stat-value">{item.stat1Value}</div>
+                <div class="testimonial-stat-label">{item.stat1Label}</div>
+              </div>
+              <div class="testimonial-stat">
+                <div class="testimonial-stat-value">{item.stat2Value}</div>
+                <div class="testimonial-stat-label">{item.stat2Label}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  {items.length === 0 && <DynEmpty />}
+</div>

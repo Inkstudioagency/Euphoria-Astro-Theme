@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/home-v2/Hero.astro';
+import About from '../components/sections/home-v2/About.astro';
+import Features from '../components/sections/home-v2/Features.astro';
+import VideoFeature from '../components/sections/home-v2/VideoFeature.astro';
+import Growth from '../components/sections/home-v2/Growth.astro';
+import Pricing from '../components/sections/home-v2/Pricing.astro';
+import Testimonials from '../components/sections/home-v2/Testimonials.astro';
+import Marquee from '../components/sections/shared/Marquee.astro';
+import FaqV2 from '../components/sections/shared/FaqV2.astro';
+import BlogHorizontal from '../components/sections/shared/BlogHorizontal.astro';
+import CtaDark from '../components/sections/shared/CtaDark.astro';
+---
+<BaseLayout
+  title="Euphoria - Premium Fintech Astro Theme"
+  description="Euphoria connects your bank feeds, invoices and reports so finance teams automate routine work, see live numbers and make confident decisions every single day."
+>
+  <main class="main-wrapper">
+    <Hero />
+    <About />
+    <Features />
+    <VideoFeature />
+    <Growth />
+    <Pricing />
+    <Testimonials />
+    <Marquee />
+    <FaqV2 />
+    <BlogHorizontal />
+    <CtaDark />
+  </main>
+</BaseLayout>

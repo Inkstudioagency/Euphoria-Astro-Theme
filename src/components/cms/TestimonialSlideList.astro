@@ -1,0 +1,41 @@
+---
+/** Horizontal testimonial slider (Home V1, About V1, Features) — one slide per case study. */
+import type { CaseStudy } from '../../lib/cms';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  items: CaseStudy[];
+}
+const { items } = Astro.props;
+---
+<div class="w-dyn-list">
+  <div role="list" class="testimonial-track scroll-track w-dyn-items">
+    {items.map((item) => (
+      <div role="listitem" class="testimonial-cms-item w-dyn-item">
+        <div class="testimonial-slide-card">
+          <div class="testimonial-slide-card-top">
+            <div class="testimonial-person"><img src={item.authorPhoto} loading="lazy" alt={item.authorName} class="testimonial-card-avatar" />
+              <div class="testimonial-person-info">
+                <div class="testimonial-person-name">{item.authorName}</div>
+                <div class="testimonial-role-row">
+                  <div class="testimonial-person-role">{item.authorRole}</div>
+                  <div class="testimonial-person-role">@</div>
+                  <div class="testimonial-person-role">{item.company}</div>
+                </div>
+              </div>
+            </div><img src={item.companyLogo} loading="lazy" alt={item.company} class="testimonial-card-logo" />
+          </div>
+          <div class="testimonial-card-bottom">
+            <p class="testimonial-card-quote">{item.quote}</p>
+            <div class="testimonial-card-divider"></div>
+            <div class="testimonial-card-stat">
+              <div class="testimonial-card-stat-value">{item.stat1Value}</div>
+              <div class="testimonial-card-stat-label">{item.stat1Label}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  {items.length === 0 && <DynEmpty />}
+</div>

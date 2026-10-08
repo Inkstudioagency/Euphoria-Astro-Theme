@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/contact-v2/PageHero.astro';
+import Offices from '../components/sections/contact-v2/Offices.astro';
+import FaqV2 from '../components/sections/shared/FaqV2.astro';
+---
+<BaseLayout
+  title="Contact | Euphoria"
+  description="Have a question about Euphoria? Send the team a message, book a call or find the office nearest to you. We help finance teams get started quickly and easily."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <Offices />
+    <FaqV2 />
+  </main>
+</BaseLayout>

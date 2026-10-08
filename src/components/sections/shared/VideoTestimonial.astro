@@ -1,0 +1,21 @@
+---
+import VideoLightboxData from '../../ui/VideoLightboxData.astro';
+---
+<section class="section_video-testimonial is-centered">
+  <div reveal-2s="" class="video-banner is-centered"><img src="/images/about-v1-video-banner_1about-v1-video-banner.webp" loading="lazy" sizes="100vw" srcset="/images/about-v1-video-banner_1-p-500.webp 500w, /images/about-v1-video-banner_1-p-800.webp 800w, /images/about-v1-video-banner_1-p-1080.webp 1080w, /images/about-v1-video-banner_1-p-1600.webp 1600w, /images/about-v1-video-banner_1-p-2000.webp 2000w, /images/about-v1-video-banner_1-p-2600.webp 2600w, /images/about-v1-video-banner_1about-v1-video-banner.webp 2832w" alt="Two finance colleagues reviewing reports together at a laptop" class="video-banner-image is-centered">
+    <div class="video-banner-overlay"></div>
+    <div class="video-banner-footer is-centered">
+      <div class="video-banner-quote is-centered">
+        <p class="video-banner-quote-text is-centered">Looking for process improvements, we found a solution that transformed our entire data strategy. The depth of insights was remarkable</p>
+      </div>
+      <div class="video-banner-actions">
+        <a href="#" class="play-link w-inline-block w-lightbox">
+          <div class="play-button"><img src="/images/icon-play-dark.svg" loading="lazy" alt="icon-play-dark" class="play-button-icon"></div>
+          <div>Watch Video</div>
+          <VideoLightboxData />
+        </a>
+        <a href="/pricing" class="pill-button">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>

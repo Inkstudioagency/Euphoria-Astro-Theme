@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IntegrationArticle from '../../components/detail/IntegrationArticle.astro';
+import Integrations from '../../components/sections/integration/Integrations.astro';
+import Faq from '../../components/sections/shared/Faq.astro';
+import CtaSimple from '../../components/sections/shared/CtaSimple.astro';
+import { getIntegrations, type Integration } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const items = await getIntegrations();
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props as { item: Integration };
+---
+<BaseLayout title={item.name} description={item.excerpt} image={item.mainImage || undefined}>
+  <main class="main-wrapper">
+    <IntegrationArticle item={item} />
+    <Integrations />
+    <Faq />
+    <CtaSimple />
+  </main>
+</BaseLayout>

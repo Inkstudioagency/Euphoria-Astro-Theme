@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_posts",
+  "info": {
+    "singularName": "blog-post",
+    "pluralName": "blog-posts",
+    "displayName": "Blog Post",
+    "description": "Journal articles. Featured posts appear on the home, about and blog hero lists."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "postBody": {
+      "type": "richtext"
+    },
+    "readTime": {
+      "type": "string"
+    },
+    "publishedDate": {
+      "type": "datetime"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Automation",
+        "Finance",
+        "Product",
+        "Company"
+      ]
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "authorRole": {
+      "type": "string"
+    },
+    "articleImage1": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "articleImage2": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "postBodyContinued": {
+      "type": "richtext"
+    }
+  }
+}

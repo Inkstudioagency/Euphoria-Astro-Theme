@@ -1,0 +1,18 @@
+---
+import { getFeaturedPosts } from '../../../lib/cms';
+import BlogCardList from '../../cms/BlogCardList.astro';
+
+const list1 = await getFeaturedPosts(3);
+---
+<section class="section_blog">
+  <div class="container-main section-gap">
+    <div class="blog-layout">
+      <div class="section-header-row">
+        <h2 section-title="" class="heading-style-2 section-title is-wide">More Related Blogs</h2>
+      </div>
+      <div>
+        <BlogCardList posts={list1} variant="grid" arrowLabel="Read article" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import { getCaseStudies } from '../../../lib/cms';
+import TestimonialCardList from '../../cms/TestimonialCardList.astro';
+
+const list1 = await getCaseStudies();
+const list2 = await getCaseStudies();
+---
+<section class="section_testimonials section-gap">
+  <div class="container-main">
+    <div class="testimonials-layout">
+      <div class="section-header-row">
+        <div class="section-header">
+          <div reveal-anim-1="" class="section-eyebrow is-white">
+            <div class="section-eyebrow-dot"></div>
+            <div>Testimonials</div>
+          </div>
+          <h2 section-title="" class="heading-style-2 section-title">See Why Customers Love Using Euphoria</h2>
+        </div>
+        <p reveal-anim-3="" class="section-header-side">We measure success by the growth of the finance teams we serve. Every workflow is built to save hours, surface real insight and support long-term, compounding results.</p>
+      </div>
+      <div reveal-2s="" class="testimonials-wrapper">
+        <TestimonialCardList items={list1} direction="left" />
+        <TestimonialCardList items={list2} direction="right" />
+      </div>
+    </div>
+  </div>
+</section>

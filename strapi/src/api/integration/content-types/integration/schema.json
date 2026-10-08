@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "integrations",
+  "info": {
+    "singularName": "integration",
+    "pluralName": "integrations",
+    "displayName": "Integration",
+    "description": "Apps shown on the Integrations page and its detail pages."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "string"
+    },
+    "filterCategory": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}

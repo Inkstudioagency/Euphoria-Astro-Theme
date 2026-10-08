@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/sections/blog/PageHero.astro';
+import Blog from '../../components/sections/blog/Blog.astro';
+import Faq from '../../components/sections/shared/Faq.astro';
+---
+<BaseLayout
+  title="Blog | Euphoria"
+  description="Read the Euphoria blog for finance automation guides, cash-flow tips, product updates and practical advice that helps finance teams work smarter every day."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <Blog />
+    <Faq />
+  </main>
+</BaseLayout>

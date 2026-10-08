@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyArticle from '../../components/detail/CaseStudyArticle.astro';
+import CtaSimple from '../../components/sections/shared/CtaSimple.astro';
+import { getCaseStudies, type CaseStudy } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const items = await getCaseStudies();
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props as { item: CaseStudy };
+---
+<BaseLayout title={item.name} description={item.excerpt} image={item.mainImage || undefined} type="article">
+  <main class="main-wrapper">
+    <CaseStudyArticle item={item} />
+    <CtaSimple />
+  </main>
+</BaseLayout>

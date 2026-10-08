@@ -1,0 +1,93 @@
+---
+import { site } from '../../config/site';
+import { mainNav, megaMenu } from '../../config/navigation';
+import ArrowIcon from '../ui/ArrowIcon.astro';
+
+interface Props {
+  /** "overlay" is the transparent variant used on Home V3. */
+  variant?: 'base' | 'overlay';
+}
+const { variant = 'base' } = Astro.props;
+
+const overlayId = '9ebb213c-ebf7-ff20-4267-ad720bc736ab';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => href === path;
+const current = (href: string) => (isCurrent(href) ? { 'aria-current': 'page' as const } : {});
+---
+<nav
+  data-wf--navbar--variant={variant}
+  data-wf-component-id="741a13da-3622-1a58-4a3a-856e52eb3ff8"
+  data-wf-variant-state={variant === 'overlay' ? overlayId : 'base'}
+  class:list={['navbar', variant === 'overlay' && `w-variant-${overlayId}`]}
+>
+  <div class="container-main navbar-container">
+    <a href="/" {...current('/')} class:list={['navbar-brand w-inline-block', isCurrent('/') && 'w--current']}><img src={site.logo} loading="lazy" alt={`${site.name} logo`} class="navbar-logo" /></a>
+    <div navbar-menu="" class="navbar-menu">
+      <div class="navbar-menu-top">
+        <a href="/" {...current('/')} class:list={['navbar-brand w-inline-block', isCurrent('/') && 'w--current']}><img src={site.logo} loading="lazy" alt={`${site.name} logo`} class="navbar-logo" /></a>
+        <div class="menu-toggle is-close">
+          <div class="menu-close-bar"></div>
+          <div class="menu-close-bar is-second"></div>
+        </div>
+      </div>
+      {mainNav.map((link) => (
+        <a href={link.href} {...current(link.href)} class:list={['navbar-link', isCurrent(link.href) && 'w--current']}>{link.label}</a>
+      ))}
+      <div class="navbar-dropdown">
+        <div class="navbar-dropdown-toggle">
+          <div>{megaMenu.label}</div><img src="/images/icon-chevron-down.svg" alt="" class="navbar-dropdown-icon" />
+        </div>
+        <div class="mega-menu">
+          <div class="container-main">
+            <div class="mega-menu-inner">
+              <div class="mega-menu-columns">
+                {megaMenu.columns.map((column, i) => (
+                  <Fragment>
+                    {i > 0 && <div class="mega-menu-divider"></div>}
+                    <div class="mega-menu-column">
+                      <div class="mega-menu-title">{column.title}</div>
+                      <div class="mega-menu-links">
+                        {column.links.map((link) => (
+                          <a href={link.href} {...current(link.href)} class:list={['mega-menu-link w-inline-block', isCurrent(link.href) && 'w--current']}>
+                            <div class="mega-menu-link-title">{link.label}</div>
+                            <div class="mega-menu-link-desc">{link.desc}</div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </Fragment>
+                ))}
+              </div>
+              <a href={site.templateUrl} class="mega-menu-image-wrapper w-inline-block"><img src={megaMenu.image.src} alt={megaMenu.image.alt} class="mega-menu-image" />
+                <div class="mega-menu-image-cta">
+                  <div class="pill-button is-white">{megaMenu.image.cta}</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-menu-cta">
+        <a href={site.cta.href} class="primary-button w-inline-block">
+          <div class="button-text">{site.cta.label}</div>
+          <div class="button-icon-wrapper">
+            <ArrowIcon />
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="navbar-actions">
+      <a href={site.cta.href} class="primary-button w-inline-block">
+        <div class="button-text">{site.cta.label}</div>
+        <div class="button-icon-wrapper">
+          <ArrowIcon />
+        </div>
+      </a>
+      <div tabindex="0" menu-toggle="" aria-label="Open menu" role="button" class="menu-toggle">
+        <div class="menu-toggle-bar"></div>
+        <div class="menu-toggle-bar"></div>
+        <div class="menu-toggle-bar"></div>
+      </div>
+    </div>
+  </div>
+</nav>

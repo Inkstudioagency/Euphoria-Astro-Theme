@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/about-v2/PageHero.astro';
+import About from '../components/sections/about-v2/About.astro';
+import Timeline from '../components/sections/about-v2/Timeline.astro';
+import Team from '../components/sections/about-v2/Team.astro';
+import VideoTestimonial from '../components/sections/shared/VideoTestimonial.astro';
+import Testimonials from '../components/sections/about-v2/Testimonials.astro';
+import Marquee from '../components/sections/shared/Marquee.astro';
+import FaqV2 from '../components/sections/shared/FaqV2.astro';
+import BlogHorizontal from '../components/sections/shared/BlogHorizontal.astro';
+import CtaDark from '../components/sections/shared/CtaDark.astro';
+---
+<BaseLayout
+  title="About | Euphoria"
+  description="Discover the story, values and experts behind Euphoria. We build finance automation that removes manual work and turns every number into a clear next step."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <About />
+    <Timeline />
+    <Team />
+    <VideoTestimonial />
+    <Testimonials />
+    <Marquee />
+    <FaqV2 />
+    <BlogHorizontal />
+    <CtaDark />
+  </main>
+</BaseLayout>

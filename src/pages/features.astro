@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/features/PageHero.astro';
+import FeatureRows from '../components/sections/features/FeatureRows.astro';
+import Benefits from '../components/sections/features/Benefits.astro';
+import IntegrationsStrip from '../components/sections/features/IntegrationsStrip.astro';
+import Testimonials from '../components/sections/features/Testimonials.astro';
+import Marquee from '../components/sections/shared/Marquee.astro';
+import Faq from '../components/sections/shared/Faq.astro';
+import CtaSimple from '../components/sections/shared/CtaSimple.astro';
+---
+<BaseLayout
+  title="Features | Euphoria"
+  description="Explore Euphoria features: automated bookkeeping, real-time cash flow, multi-entity reporting and audit-ready controls built for modern, growing finance teams."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <FeatureRows />
+    <Benefits />
+    <IntegrationsStrip />
+    <Testimonials />
+    <Marquee />
+    <Faq />
+    <CtaSimple />
+  </main>
+</BaseLayout>

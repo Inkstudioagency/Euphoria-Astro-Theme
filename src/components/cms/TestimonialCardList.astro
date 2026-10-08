@@ -1,0 +1,53 @@
+---
+/** Marquee row of testimonial cards with two stats each (About V3, Home V3). */
+import type { CaseStudy } from '../../lib/cms';
+import { caseStudyUrl } from '../../lib/cms';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  items: CaseStudy[];
+  /** Marquee scroll direction. */
+  direction?: 'left' | 'right';
+  /** Adds the `card-hover` interaction and the small button used on Home V3. */
+  compact?: boolean;
+  /** Lazy-load images (the Home V3 second row loads eagerly). */
+  lazy?: boolean;
+}
+const { items, direction = 'left', compact = false, lazy = true } = Astro.props;
+const loading = lazy ? ('lazy' as const) : undefined;
+---
+<div data-marquee-speed="40" data-marquee={direction} class="w-dyn-list">
+  <div role="list" class="testimonials-list w-dyn-items">
+    {items.map((item) => (
+      <div role="listitem" class="testimonial-item w-dyn-item">
+        <div card-hover={compact ? '' : undefined} class="testimonial-card">
+          <div class="testimonial-card-main">
+            <div class="testimonial-card-top"><img src="/images/rating-stars-clean.svg" loading={loading} alt="Five star rating" class="testimonial-stars" />
+              <p class="testimonial-quote">{item.quote}</p>
+            </div>
+            <div class="testimonial-author"><img src={item.authorPhoto} loading={loading} alt={item.authorName} class="testimonial-avatar" />
+              <div>
+                <div class="text-size-small text-weight-semibold text-color-primary">{item.authorName}</div>
+                <div class="text-size-xsmall text-color-secondary">{item.authorRole}</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card-aside"><img src={item.companyLogo} loading={loading} alt={item.name} class="testimonial-logo" />
+            <div class="testimonial-stats">
+              <div class="testimonial-stat">
+                <div class="testimonial-stat-value">{item.stat1Value}</div>
+                <div class="testimonial-stat-label">{item.stat1Label}</div>
+              </div>
+              <div class="testimonial-stat">
+                <div class="testimonial-stat-value">{item.stat2Value}</div>
+                <div class="testimonial-stat-label">{item.stat2Label}</div>
+              </div>
+            </div>
+            <a href={caseStudyUrl(item)} class:list={['pill-button is-dark', compact && 'is-small']}>View Case Study</a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  {items.length === 0 && <DynEmpty />}
+</div>

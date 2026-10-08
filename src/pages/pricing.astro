@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/pricing/PageHero.astro';
+import Comparison from '../components/sections/pricing/Comparison.astro';
+import Faq from '../components/sections/shared/Faq.astro';
+import CtaSimple from '../components/sections/shared/CtaSimple.astro';
+---
+<BaseLayout
+  title="Pricing | Euphoria"
+  description="Compare Euphoria pricing plans for startups and growing businesses. Transparent monthly or yearly billing, every core feature included and no hidden fees."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <Comparison />
+    <Faq />
+    <CtaSimple />
+  </main>
+</BaseLayout>

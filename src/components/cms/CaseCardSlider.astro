@@ -1,0 +1,36 @@
+---
+/** Case study card slider with photo, long quote and logo (Home V2, About V2). */
+import type { CaseStudy } from '../../lib/cms';
+import { caseStudyUrl } from '../../lib/cms';
+import DynEmpty from './DynEmpty.astro';
+
+interface Props {
+  items: CaseStudy[];
+}
+const { items } = Astro.props;
+---
+<div class="w-dyn-list">
+  <div role="list" class="case-slider scroll-track w-dyn-items">
+    {items.map((item) => (
+      <div role="listitem" class="case-card w-dyn-item"><img src={item.cardPhoto} loading="lazy" alt={item.authorName} class="case-card-photo" />
+        <div class="case-card-body">
+          <div>
+            <div class="text-size-medium text-weight-medium text-color-primary">{item.authorName}</div>
+            <div class="testimonial-role-row">
+              <div class="text-size-regular text-color-secondary">{item.authorRole}</div>
+              <div class="text-size-regular text-color-secondary">@</div>
+              <div class="text-size-regular text-color-secondary">{item.company}</div>
+            </div>
+          </div>
+          <p class="case-card-quote">{item.longQuote}</p>
+          <div class="case-card-footer"><img src={item.companyLogo} loading="lazy" alt={item.company} class="case-card-logo" />
+            <div class="button-wrapper">
+              <a href={caseStudyUrl(item)} class="case-card-button">View Case Study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  {items.length === 0 && <DynEmpty />}
+</div>

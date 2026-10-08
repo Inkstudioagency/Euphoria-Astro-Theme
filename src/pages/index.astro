@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/home-v1/Hero.astro';
+import About from '../components/sections/home-v1/About.astro';
+import Features from '../components/sections/home-v1/Features.astro';
+import VideoTestimonial from '../components/sections/home-v1/VideoTestimonial.astro';
+import Growth from '../components/sections/home-v1/Growth.astro';
+import Pricing from '../components/sections/home-v1/Pricing.astro';
+import Testimonials from '../components/sections/home-v1/Testimonials.astro';
+import Marquee from '../components/sections/shared/Marquee.astro';
+import Faq from '../components/sections/shared/Faq.astro';
+import Blog from '../components/sections/home-v1/Blog.astro';
+import CtaSimple from '../components/sections/shared/CtaSimple.astro';
+---
+<BaseLayout
+  title="Euphoria - Premium Fintech Astro Theme"
+  description="Automate bookkeeping, forecast cash flow and close the books faster. Euphoria gives growing finance teams live reports and audit-ready controls in one place."
+>
+  <main class="main-wrapper">
+    <Hero />
+    <About />
+    <Features />
+    <VideoTestimonial />
+    <Growth />
+    <Pricing />
+    <Testimonials />
+    <Marquee />
+    <Faq />
+    <Blog />
+    <CtaSimple />
+  </main>
+</BaseLayout>

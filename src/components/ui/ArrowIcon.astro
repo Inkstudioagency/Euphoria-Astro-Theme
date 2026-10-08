@@ -1,0 +1,10 @@
+---
+/** The arrow icon used inside buttons (`.button-icon.w-embed`). */
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+<div class:list={['button-icon', className, 'w-embed']}><svg width="100%" height="100%" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M1.24996 8.12535L1.24988 6.87543H11.3573L8.88879 4.40682L9.77266 3.52295L13.7501 7.50045L9.77266 11.4779L8.88879 10.594L11.3574 8.12542L1.24996 8.12535Z" fill="currentColor"></path>
+  </svg></div>

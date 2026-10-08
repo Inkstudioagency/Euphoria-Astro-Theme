@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/case-studies/PageHero.astro';
+import CaseStudies from '../components/sections/case-studies/CaseStudies.astro';
+import Marquee from '../components/sections/shared/Marquee.astro';
+import Cta from '../components/sections/case-studies/Cta.astro';
+---
+<BaseLayout
+  title="Case Studies | Euphoria"
+  description="See how finance teams use Euphoria to cut close time, automate reconciliation and report to investors with confidence. Real results from real customers."
+>
+  <main class="main-wrapper">
+    <PageHero />
+    <CaseStudies />
+    <Marquee />
+    <Cta />
+  </main>
+</BaseLayout>

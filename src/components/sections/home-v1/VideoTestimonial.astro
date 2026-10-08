@@ -1,0 +1,32 @@
+---
+import VideoLightboxData from '../../ui/VideoLightboxData.astro';
+---
+<section class="section_video-testimonial">
+  <div reveal-2s="" class="video-banner"><img src="/images/testimonial-video-photo.webp" loading="lazy" sizes="(max-width: 1600px) 100vw, 1600px" srcset="/images/testimonial-video-photo-p-500.webp 500w, /images/testimonial-video-photo-p-800.webp 800w, /images/testimonial-video-photo-p-1080.webp 1080w, /images/testimonial-video-photo.webp 1600w" alt="Analyst working at a laptop in a home office" class="video-banner-image">
+    <div class="video-banner-card">
+      <div class="video-banner-card-header">
+        <div class="avatar-stack"><img src="/images/about-avatar-1.webp" loading="lazy" alt="Customer portrait" class="avatar-stack-item is-small"><img src="/images/about-avatar-2.webp" loading="lazy" alt="Customer portrait" class="avatar-stack-item is-small"><img src="/images/about-avatar-3-1x_1about-avatar-3-1x.webp" loading="lazy" alt="Customer portrait" class="avatar-stack-item is-small"><img src="/images/testimonial-avatar-4.webp" loading="lazy" alt="Customer portrait" class="avatar-stack-item is-small">
+          <div class="avatar-stack-count is-small">120k</div>
+        </div><img src="/images/icon-logomark.svg" loading="lazy" alt="icon-logomark" class="icon-logomark">
+      </div>
+      <p class="text-size-small text-color-secondary">Investing in bold ideas that inspire progress and growth.</p>
+    </div>
+    <div class="video-banner-footer">
+      <div class="video-banner-quote">
+        <p class="video-banner-quote-text">“Looking for process improvements, we found a solution that transformed our entire data strategy. The depth of insights was remarkable.”</p>
+        <div>
+          <div class="text-size-medium text-weight-bold text-color-inverse">Jane Doe</div>
+          <div class="text-size-small text-color-inverse">Product Strategy Lead</div>
+        </div>
+      </div>
+      <div class="video-banner-actions">
+        <a href="#" class="play-link w-inline-block w-lightbox">
+          <div class="play-button"><img src="/images/icon-play-dark.svg" loading="lazy" alt="icon-play-dark" class="play-button-icon"></div>
+          <div>Watch Video</div>
+          <VideoLightboxData />
+        </a>
+        <a href="https://maps.google.com" class="pill-button">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>

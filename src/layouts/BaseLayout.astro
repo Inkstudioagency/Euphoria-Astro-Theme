@@ -1,0 +1,51 @@
+---
+import '../styles/normalize.css';
+import '../styles/base.css';
+import '../styles/theme.css';
+import '../styles/custom.css';
+import SEO from '../components/global/SEO.astro';
+import InteractionPreload from '../components/global/InteractionPreload.astro';
+import Navbar from '../components/global/Navbar.astro';
+import Footer from '../components/global/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  navVariant?: 'base' | 'overlay';
+  /** Render the shared navbar and footer (off for the bare password-style layouts). */
+  chrome?: boolean;
+  /** Extra scripts loaded after the shared ones. */
+  scripts?: string[];
+}
+
+const { title, description, image, type, noindex, navVariant = 'base', chrome = true, scripts = [] } = Astro.props;
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || '';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO title={title} description={description} image={image} type={type} noindex={noindex} />
+    {formEndpoint && <meta name="form-endpoint" content={formEndpoint} />}
+    <InteractionPreload />
+    <script is:inline>!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link rel="preload" href="/fonts/6ab1c71b363eccef7d7e496b-Switzer-400.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      {chrome && <Navbar variant={navVariant} />}
+      <slot />
+      {chrome && <Footer />}
+    </div>
+    <script is:inline src="/js/forms.js"></script>
+    <script>
+      import '../scripts/main.ts';
+    </script>
+    {scripts.map((src) => <script is:inline src={src}></script>)}
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "euphoria-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strapi CMS for the Euphoria Astro theme",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "seed": "node scripts/seed.js",
+    "setup": "node scripts/setup-env.js"
+  },
+  "dependencies": {
+    "@strapi/database": "5.57.0",
+    "@strapi/plugin-cloud": "5.57.0",
+    "@strapi/plugin-users-permissions": "5.57.0",
+    "@strapi/strapi": "5.57.0",
+    "better-sqlite3": "12.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "6d718f76-14f1-4ce1-9ad0-3f819ba98d91",
+    "installId": "20d46d7797ed4c2bf75a6c1b4a7e9f54f1a7713e1e7b2283378a122516c98ca0"
+  }
+}

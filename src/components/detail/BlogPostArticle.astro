@@ -1,0 +1,31 @@
+---
+/** Blog post hero (title + main image) and article body. */
+import type { BlogPost } from '../../lib/cms';
+
+interface Props {
+  post: BlogPost;
+}
+const { post } = Astro.props;
+---
+<section class="section_article-hero">
+  <div class="container-main section-gap-small bottom-gap-none">
+    <div class="section-header is-centered">
+      <h1 hero-title="" class="heading-style-1 article-hero-title">{post.name}</h1>
+    </div>
+  </div>
+  <div class="container-main section-gap-small bottom-gap-none"><img src={post.mainImage} loading="eager" fetchpriority="high" page-load-3="" alt={post.name} class="article-hero-image" /></div>
+</section>
+<section class="section_article">
+  <div class="container-main section-gap">
+    <div reveal-2s="" class="article-body">
+      <div class="rich-text w-richtext" set:html={post.postBody}></div>
+      {(post.articleImage1 || post.articleImage2) && (
+        <div class="article-image-grid">
+          {post.articleImage1 && <img src={post.articleImage1} loading="lazy" alt="" class="article-image" />}
+          {post.articleImage2 && <img src={post.articleImage2} loading="lazy" alt="" class="article-image" />}
+        </div>
+      )}
+      <div class="rich-text w-richtext" set:html={post.postBodyContinued}></div>
+    </div>
+  </div>
+</section>
