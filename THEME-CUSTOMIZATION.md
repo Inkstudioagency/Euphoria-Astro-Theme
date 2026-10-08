@@ -60,7 +60,6 @@ public/
   videos/           background videos and their posters
   documents/        Lottie animation files (JSON)
   js/forms.js       form submission (see §15)
-  robots.txt
 src/
   components/
     global/         Navbar.astro, Footer.astro, SEO.astro, InteractionPreload.astro
