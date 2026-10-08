@@ -264,7 +264,7 @@ Never put Strapi variables in `PUBLIC_*` variables, and never commit `.env` file
 - CMS pages: the title is the entry name, the description is its excerpt, and the share image is its main image.
 - Defaults (description, share image `/images/og-image.webp`): `src/config/site.ts`.
 - Canonical and Open Graph URLs use `SITE_URL`.
-- `@astrojs/sitemap` creates `sitemap-index.xml` at build time (404 and Style Guide are excluded). Update the sitemap URL in `public/robots.txt` to your domain.
+- `@astrojs/sitemap` creates `sitemap-index.xml` at build time (404 and Style Guide are excluded). `robots.txt` is generated from `SITE_URL` (`src/pages/robots.txt.ts`).
 - `noindex` is set on `/404` and `/style-guide`.
 
 ## 14. Dynamic routes and slugs
