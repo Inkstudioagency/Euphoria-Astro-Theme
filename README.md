@@ -2,7 +2,7 @@
 
 Euphoria is a polished marketing theme for finance, fintech and SaaS products. It has three home pages, three about pages, three contact pages, and a blog, case studies and integrations that are managed in Strapi. Built with Astro 7 and Strapi 5, with GSAP-powered scroll and hover animations and smooth scrolling.
 
-**Live demo:** https://euphoria-astro-theme.vercel.app
+**Live demo:** https://euphoria-astro.vercel.app
 
 ## Features
 
